@@ -1,0 +1,366 @@
+html {
+      font-size: 10px;
+}
+
+:root {
+      --container-left-width-45: 45%;
+      --container-left-width-30: 30%;
+}
+
+body {
+      cursor: url('../assets/cursor/yugicursor.png'), default;
+}
+
+button, a, img:hover, button:hover, a:hover {
+      cursor: url('../assets/cursor/yamiyugicursorGLOW.png'), default;
+
+}
+
+.bg-video {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: -2;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      min-width: 320px;
+      min-height: 640px;
+}
+
+.bg-video .video {
+      height: inherit;
+}
+
+.bg-video::after {
+      min-width: 320px;
+      min-height: 640px;
+      content: "";
+      height: inherit;
+      width: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(90deg,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.8) 50%,
+      rgba(0,0,0,1) 100% );
+}
+
+.container {
+      width: 100vw;
+      height: 100vh;
+      min-width: 320px;
+      min-height: 640px;
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+}
+
+.container__left {
+      height: 70%;
+      padding: 0;
+      width: var(--container-left-width-45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+}
+
+.frame {
+      border: 3px solid #000;
+      border-radius: 5px;
+}
+
+.score_box {
+      width: 100%;
+      min-height: 80px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: unset;
+      justify-content: space-around;
+      background-color: #fff; 
+}
+
+.menu_avatar {
+      width: 100%;
+      height: auto;
+      min-width: 115px;
+      min-height: 152px;
+      max-width: 163px;
+      aspect-ratio: 3/4;
+      margin: 1rem 0;
+      display: flex;
+      border-radius: 8px;
+      border: 1px solid white;
+}
+
+.menu_avatar > img {
+      width: 100%;
+      height: 100%;
+}
+
+.card_details {
+      width: 100%;
+      min-height: 100px;
+      padding: 1rem;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: unset;
+      justify-content: space-evenly;
+}
+
+.card-name {
+      font-size: 0.8rem;
+}
+
+.card-type {
+      font-size: 1rem;
+}
+
+.container__right {
+      width: calc(100% - var(--container-left-width-45));
+      height: 100%;
+}
+
+.card-box__container {
+      width: 100%;
+      height: 100%;
+      min-width: 320px; 
+      min-height: 640px;
+      padding: 0.3rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+}
+
+.card-box#player-cards, .card-box#computer-cards {
+      width: 100%;
+      height: 14%;
+      min-height: 9rem;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+}
+
+.card-box#player-cards > img, .card-box#computer-cards >img {
+      height: 100%;
+}
+
+.card-versus__container {
+      width: calc(100% - var(--container-left-width-45));
+      height: 70%;
+      padding-top: 0.2rem;
+      position: relative;
+      left: var(--container-left-width-45);
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      justify-content: center;
+      align-items: center;
+}
+
+.versus-top, .versus-bottom {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.versus-top {
+      width: 100%;
+      height: calc(100% - 6.8rem);
+}
+
+.card-infield {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      border-radius: 8px;
+}
+
+.versus-bottom {
+      width: 100%;
+      height: 6rem;
+      margin-top: 0.5rem;
+}
+
+.card-infield img:nth-child(2) {
+      width: 13vmin;
+      height: 13vmin;
+      min-width: 64px;
+      min-height: 64px;
+      max-width: 100px;
+      max-height: 100px;
+}
+
+.card-infield #computer-field-card, .card-infield #player-field-card {
+      width: auto;
+      height: 38%;
+}
+
+.card {
+      transition: transform 0.2s;
+}
+
+.card:hover {
+      transform: scale(1.2);
+}
+
+#next-duel {
+      display: none;
+}
+
+@media screen and (min-width: 490px) {
+      
+      .container__left {
+            width: var(--container-left-width-45);
+            min-width: 145px;
+            height: 100%;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+      }
+
+      .score_box {
+            width: 100%;
+            min-height: 80px;
+            padding: 1rem;
+      }
+       
+      .card_details {
+            width: 100%;
+            min-height: 90px;
+            padding: 1rem;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: unset;
+            justify-content: space-evenly;
+      }
+      
+      .card-name {
+            font-size: 0.8rem;
+      }
+      
+      .card-type {
+            font-size: 1rem;
+      }
+
+      .card-box__container {
+            min-width: unset; 
+            min-height: unset;
+            position: relative;
+      }
+      
+      .card-box#player-cards, .card-box#computer-cards {
+            height: 20%;
+      }
+      
+      .card-versus__container {
+            width: inherit;
+            height: 100%;
+            min-height: 425px;
+            left: unset; 
+      }
+    
+}
+
+@media screen and (min-height: 320px) and (min-width: 640px) {
+      
+      .bg-video, .bg-video::after, .container {
+            min-width: 640px;
+            min-height: 320px;
+      }
+
+      .container__left {
+            width: var(--container-left-width-30);
+            min-width: unset;
+      }
+      
+      .score_box {
+            min-height: 50px;
+            max-height: 90px;
+            height: 20%;
+      }
+       
+      .menu_avatar {
+            max-width: 50%;
+      }
+
+      .card_details {
+            min-height: 80px;
+      }
+
+      .container__right {
+            width: calc(100% - var(--container-left-width-30));
+            height: 100vh;
+            min-height: 320px;
+      }
+
+      .card-box__container {
+            min-width: unset; 
+            min-height: unset;
+      }
+      
+      .card-box#player-cards, .card-box#computer-cards {
+            min-width: unset;
+            height: 25%;
+            min-height: 8rem;
+      }
+
+      .card-box#player-cards > img, .card-box#computer-cards >img {
+            height: 90%;
+      }
+      
+      .card-versus__container {      
+           width: 100%;
+           height: calc(100% - 50%);
+           min-height: 150px;
+           padding-top: 0;
+      }
+
+      .versus-top, .versus-bottom {
+            width: 100%;
+      }
+      
+      .card-infield {
+            flex-direction: row;
+            position: absolute;
+            top: 0;
+            left: 0;
+      }
+      
+      .versus-bottom {
+            z-index: 1;
+      }
+      
+      .card-infield img:nth-child(2) {
+            min-width: 70px;
+            min-height: 70px;
+            margin: 3rem 3rem 5rem 3rem;
+      }
+      
+      .card-infield #computer-field-card, .card-infield #player-field-card {
+            height: calc(70% - 4rem);
+            min-width: 105px;
+            min-height: 145px;
+            max-width: calc(50% - 70px);
+            aspect-ratio: auto;
+            padding: 0 1rem;
+      }
+
+}
